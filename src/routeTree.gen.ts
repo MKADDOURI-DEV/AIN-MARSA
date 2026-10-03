@@ -10,33 +10,141 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ActivitesRouteImport } from './routes/activites'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DestinationRouteImport } from './routes/destination'
+import { Route as GalerieRouteImport } from './routes/galerie'
+import { Route as ReservationRouteImport } from './routes/reservation'
+import { Route as ServicesRouteImport } from './routes/services'
+import { Route as ChambresIndexRouteImport } from './routes/chambres.index'
+import { Route as ChambresSlugRouteImport } from './routes/chambres.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ActivitesRoute = ActivitesRouteImport.update({
+  id: '/activites',
+  path: '/activites',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DestinationRoute = DestinationRouteImport.update({
+  id: '/destination',
+  path: '/destination',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalerieRoute = GalerieRouteImport.update({
+  id: '/galerie',
+  path: '/galerie',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReservationRoute = ReservationRouteImport.update({
+  id: '/reservation',
+  path: '/reservation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChambresIndexRoute = ChambresIndexRouteImport.update({
+  id: '/chambres/',
+  path: '/chambres/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChambresSlugRoute = ChambresSlugRouteImport.update({
+  id: '/chambres/$slug',
+  path: '/chambres/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/activites': typeof ActivitesRoute
+  '/contact': typeof ContactRoute
+  '/destination': typeof DestinationRoute
+  '/galerie': typeof GalerieRoute
+  '/reservation': typeof ReservationRoute
+  '/services': typeof ServicesRoute
+  '/chambres/$slug': typeof ChambresSlugRoute
+  '/chambres/': typeof ChambresIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/activites': typeof ActivitesRoute
+  '/contact': typeof ContactRoute
+  '/destination': typeof DestinationRoute
+  '/galerie': typeof GalerieRoute
+  '/reservation': typeof ReservationRoute
+  '/services': typeof ServicesRoute
+  '/chambres/$slug': typeof ChambresSlugRoute
+  '/chambres': typeof ChambresIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/activites': typeof ActivitesRoute
+  '/contact': typeof ContactRoute
+  '/destination': typeof DestinationRoute
+  '/galerie': typeof GalerieRoute
+  '/reservation': typeof ReservationRoute
+  '/services': typeof ServicesRoute
+  '/chambres/$slug': typeof ChambresSlugRoute
+  '/chambres/': typeof ChambresIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/activites'
+    | '/contact'
+    | '/destination'
+    | '/galerie'
+    | '/reservation'
+    | '/services'
+    | '/chambres/$slug'
+    | '/chambres/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/activites'
+    | '/contact'
+    | '/destination'
+    | '/galerie'
+    | '/reservation'
+    | '/services'
+    | '/chambres/$slug'
+    | '/chambres'
+  id:
+    | '__root__'
+    | '/'
+    | '/activites'
+    | '/contact'
+    | '/destination'
+    | '/galerie'
+    | '/reservation'
+    | '/services'
+    | '/chambres/$slug'
+    | '/chambres/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ActivitesRoute: typeof ActivitesRoute
+  ContactRoute: typeof ContactRoute
+  DestinationRoute: typeof DestinationRoute
+  GalerieRoute: typeof GalerieRoute
+  ReservationRoute: typeof ReservationRoute
+  ServicesRoute: typeof ServicesRoute
+  ChambresSlugRoute: typeof ChambresSlugRoute
+  ChambresIndexRoute: typeof ChambresIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +156,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/activites': {
+      id: '/activites'
+      path: '/activites'
+      fullPath: '/activites'
+      preLoaderRoute: typeof ActivitesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/destination': {
+      id: '/destination'
+      path: '/destination'
+      fullPath: '/destination'
+      preLoaderRoute: typeof DestinationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/galerie': {
+      id: '/galerie'
+      path: '/galerie'
+      fullPath: '/galerie'
+      preLoaderRoute: typeof GalerieRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reservation': {
+      id: '/reservation'
+      path: '/reservation'
+      fullPath: '/reservation'
+      preLoaderRoute: typeof ReservationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/chambres/': {
+      id: '/chambres/'
+      path: '/chambres'
+      fullPath: '/chambres/'
+      preLoaderRoute: typeof ChambresIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/chambres/$slug': {
+      id: '/chambres/$slug'
+      path: '/chambres/$slug'
+      fullPath: '/chambres/$slug'
+      preLoaderRoute: typeof ChambresSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ActivitesRoute: ActivitesRoute,
+  ContactRoute: ContactRoute,
+  DestinationRoute: DestinationRoute,
+  GalerieRoute: GalerieRoute,
+  ReservationRoute: ReservationRoute,
+  ServicesRoute: ServicesRoute,
+  ChambresSlugRoute: ChambresSlugRoute,
+  ChambresIndexRoute: ChambresIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
