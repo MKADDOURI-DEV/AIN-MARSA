@@ -1,3 +1,5 @@
+"use client";
+
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 
 export type Lang = "fr" | "en" | "ar";
@@ -32,10 +34,10 @@ const fr = {
   book_title: "Réservation", book_sub: "Envoyez votre demande : l’établissement vous contactera pour confirmer votre séjour.",
   f_name: "Nom complet", f_phone: "Téléphone", f_email: "Email", f_notes: "Remarques", f_room: "Chambre souhaitée", f_any: "Peu importe", f_message: "Message",
   f_send: "Envoyer la demande", f_sending: "Envoi…",
-  book_ok_title: "Demande reçue", book_ok: "Votre demande a bien été reçue. L’établissement vous contactera pour confirmer votre séjour.", ref: "Référence",
+  book_ok_title: "Demande prête", book_ok: "Votre demande est prête. Si WhatsApp ne s’est pas ouvert, appuyez sur le bouton ci-dessous pour l’envoyer à l’établissement.", ref: "Référence",
   err_generic: "Une erreur est survenue. Réessayez ou contactez-nous par téléphone.", err_dates: "La date de départ doit être après l’arrivée.",
   contact_title: "Contact", contact_sub: "Une question, une demande ? Nous vous répondons.",
-  contact_ok: "Merci, votre message a bien été envoyé.", call: "Appeler", directions: "Itinéraire GPS", whatsapp: "WhatsApp",
+  contact_ok: "Votre message est prêt. Si WhatsApp ne s’est pas ouvert, appuyez sur le bouton ci-dessous.", call: "Appeler", directions: "Itinéraire GPS", whatsapp: "WhatsApp",
   footer_tag: "Auberge de montagne à Dayet Aoua, province d’Ifrane.",
 };
 type Dict = typeof fr;
@@ -70,10 +72,10 @@ const en: Dict = {
   book_title: "Booking", book_sub: "Send your request: the inn will contact you to confirm your stay.",
   f_name: "Full name", f_phone: "Phone", f_email: "Email", f_notes: "Notes", f_room: "Preferred room", f_any: "No preference", f_message: "Message",
   f_send: "Send request", f_sending: "Sending…",
-  book_ok_title: "Request received", book_ok: "Your request has been received. The inn will contact you to confirm your stay.", ref: "Reference",
+  book_ok_title: "Request ready", book_ok: "Your request is ready. If WhatsApp did not open, tap the button below to send it to the inn.", ref: "Reference",
   err_generic: "Something went wrong. Please retry or call us.", err_dates: "Check-out must be after check-in.",
   contact_title: "Contact", contact_sub: "A question or a request? We’ll get back to you.",
-  contact_ok: "Thank you, your message has been sent.", call: "Call", directions: "GPS directions", whatsapp: "WhatsApp",
+  contact_ok: "Your message is ready. If WhatsApp did not open, tap the button below.", call: "Call", directions: "GPS directions", whatsapp: "WhatsApp",
   footer_tag: "Mountain inn in Dayet Aoua, Ifrane province.",
 };
 
@@ -107,10 +109,10 @@ const ar: Dict = {
   book_title: "الحجز", book_sub: "أرسلوا طلبكم: ستتصل بكم المؤسسة لتأكيد إقامتكم.",
   f_name: "الاسم الكامل", f_phone: "الهاتف", f_email: "البريد الإلكتروني", f_notes: "ملاحظات", f_room: "الغرفة المفضلة", f_any: "لا يهم", f_message: "الرسالة",
   f_send: "إرسال الطلب", f_sending: "جارٍ الإرسال…",
-  book_ok_title: "تم استلام الطلب", book_ok: "تم استلام طلبكم بنجاح. ستتصل بكم المؤسسة لتأكيد إقامتكم.", ref: "المرجع",
+  book_ok_title: "الطلب جاهز", book_ok: "طلبكم جاهز. إذا لم يُفتح واتساب، اضغطوا على الزر أدناه لإرساله إلى المؤسسة.", ref: "المرجع",
   err_generic: "حدث خطأ. حاولوا مجدداً أو اتصلوا بنا هاتفياً.", err_dates: "يجب أن يكون تاريخ المغادرة بعد الوصول.",
   contact_title: "اتصل بنا", contact_sub: "سؤال أو طلب؟ سنرد عليكم.",
-  contact_ok: "شكراً، تم إرسال رسالتكم.", call: "اتصال", directions: "الاتجاهات GPS", whatsapp: "واتساب",
+  contact_ok: "رسالتكم جاهزة. إذا لم يُفتح واتساب، اضغطوا على الزر أدناه.", call: "اتصال", directions: "الاتجاهات GPS", whatsapp: "واتساب",
   footer_tag: "نُزُل جبلي في ضاية عوا، إقليم إفران.",
 };
 
