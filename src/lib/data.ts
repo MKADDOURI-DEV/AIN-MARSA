@@ -11,7 +11,33 @@ export type Testimonial = {
   id: string; text: string; first_name: string; country?: string; platform?: string; rating?: number;
 };
 
-export const rooms: Room[] = [];
+// EXEMPLES : remplacez noms, descriptions, prix et photos (public/images) par les vraies chambres.
+export const rooms: Room[] = [
+  {
+    slug: "chambre-double-confort", name: "Chambre Double Confort",
+    description: "Une chambre calme et lumineuse, décorée en bois et pierre, idéale pour un séjour en couple au cœur du Moyen Atlas.",
+    images: ["/images/room.jpg"], bed_type: "1 grand lit", capacity: 2, surface_m2: 20, view: "Vue montagne",
+    amenities: ["Wi-Fi gratuit", "Climatisation", "Salle de bain privée", "Chauffage", "Petit-déjeuner disponible"], price_mad: 450,
+  },
+  {
+    slug: "chambre-twin", name: "Chambre Twin",
+    description: "Deux lits simples dans une chambre fonctionnelle et chaleureuse, parfaite pour des amis ou des collègues.",
+    images: ["/images/room.jpg"], bed_type: "2 lits simples", capacity: 2, surface_m2: 20, view: "Vue jardin",
+    amenities: ["Wi-Fi gratuit", "Salle de bain privée", "Chauffage", "Parking privé gratuit"], price_mad: 400,
+  },
+  {
+    slug: "chambre-triple", name: "Chambre Triple",
+    description: "Une chambre spacieuse pour trois personnes, avec coin détente et accès direct au jardin.",
+    images: ["/images/room.jpg"], bed_type: "3 lits simples", capacity: 3, surface_m2: 26, view: "Vue jardin",
+    amenities: ["Wi-Fi gratuit", "Salle de bain privée", "Chauffage", "Accès jardin"], price_mad: 550,
+  },
+  {
+    slug: "chambre-familiale", name: "Chambre Familiale",
+    description: "Pensée pour les familles : un grand espace, plusieurs couchages et une belle vue sur les reliefs environnants.",
+    images: ["/images/room.jpg"], bed_type: "1 grand lit + 2 lits simples", capacity: 4, surface_m2: 32, view: "Vue montagne",
+    amenities: ["Wi-Fi gratuit", "Climatisation", "Salle de bain privée", "Chauffage", "Terrasse", "Petit-déjeuner disponible"], price_mad: 700,
+  },
+];
 export const activities: Activity[] = [];
 export const testimonials: Testimonial[] = [];
 
