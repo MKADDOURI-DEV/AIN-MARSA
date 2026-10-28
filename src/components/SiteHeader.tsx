@@ -22,9 +22,8 @@ export function SiteHeader() {
   return (
     <header className={cn("z-40 w-full", overHero ? "absolute top-0 text-cream" : "sticky top-0 border-b bg-background/95 backdrop-blur text-foreground")}>
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-4 lg:px-8">
-        <Link href="/" className="flex flex-col leading-none">
-          <span className="font-display text-2xl tracking-wide">Ain Mersa</span>
-          <span className="mt-1 text-[0.6rem] uppercase tracking-[0.3em] opacity-75">Motel · Ifrane</span>
+        <Link href="/" aria-label="Auberge Ain Mersa — accueil" className={cn("flex items-center", overHero && "rounded-md bg-cream/95 px-3 py-1.5 shadow-soft")}>
+          <img src="/logo.png" alt="Auberge Ain Mersa" width={160} height={96} className="h-12 w-auto md:h-14" />
         </Link>
         <nav className="hidden items-center gap-7 text-sm lg:flex" aria-label="Navigation principale">
           {links.map((l) => (

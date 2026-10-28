@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { CheckCircle2, MessageCircle } from "lucide-react";
 import { PageHero } from "./PageHero";
+import { NumberSelect } from "./NumberSelect";
 import { rooms } from "@/lib/data";
 import { useI18n } from "@/lib/i18n";
 import { SITE, whatsappUrl } from "@/lib/site";
@@ -62,9 +63,9 @@ export function BookingView() {
           <fieldset className="grid grid-cols-2 gap-4 md:grid-cols-5">
             <label><span className={lbl}>{t("s_checkin")}</span><input required type="date" className={input} value={f.check_in} onChange={(e) => setF({ ...f, check_in: e.target.value })} /></label>
             <label><span className={lbl}>{t("s_checkout")}</span><input required type="date" className={input} value={f.check_out} min={f.check_in} onChange={(e) => setF({ ...f, check_out: e.target.value })} /></label>
-            <label><span className={lbl}>{t("s_adults")}</span><input type="number" min={1} max={20} className={input} value={f.adults} onChange={(e) => setF({ ...f, adults: +e.target.value })} /></label>
-            <label><span className={lbl}>{t("s_children")}</span><input type="number" min={0} max={20} className={input} value={f.children} onChange={(e) => setF({ ...f, children: +e.target.value })} /></label>
-            <label><span className={lbl}>{t("s_rooms")}</span><input type="number" min={1} max={10} className={input} value={f.rooms_count} onChange={(e) => setF({ ...f, rooms_count: +e.target.value })} /></label>
+            <label><span className={lbl}>{t("s_adults")}</span><NumberSelect min={1} max={10} className={input} value={f.adults} onChange={(n) => setF({ ...f, adults: n })} /></label>
+            <label><span className={lbl}>{t("s_children")}</span><NumberSelect min={0} max={10} className={input} value={f.children} onChange={(n) => setF({ ...f, children: n })} /></label>
+            <label><span className={lbl}>{t("s_rooms")}</span><NumberSelect min={1} max={5} className={input} value={f.rooms_count} onChange={(n) => setF({ ...f, rooms_count: n })} /></label>
           </fieldset>
 
           {matching.length > 0 && (

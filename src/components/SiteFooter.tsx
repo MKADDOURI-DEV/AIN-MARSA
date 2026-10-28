@@ -10,7 +10,7 @@ export function SiteFooter() {
     <footer className="bg-forest-deep text-cream">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 md:grid-cols-3 lg:px-8">
         <div>
-          <p className="font-display text-3xl">Motel Ain Mersa</p>
+          <img src="/logo.png" alt="Auberge Ain Mersa" className="h-24 w-auto rounded-md bg-cream p-2" />
           <p className="mt-3 max-w-xs text-sm opacity-75">{t("footer_tag")}</p>
           <p className="mt-4 text-xs uppercase tracking-[0.25em] text-gold">{t("facts_class")}</p>
         </div>
